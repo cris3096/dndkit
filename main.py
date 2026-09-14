@@ -1300,7 +1300,7 @@ def main(page: ft.Page):
                 ft.Text(result, color=Theme.TEXT_PRIMARY, size=14),
             ], tight=True, spacing=2),
             padding=ft.Padding.symmetric(vertical=10, horizontal=12),
-            bgcolor=Theme.SURFACE_VARIANT,
+            bgcolor=Theme.SURFACE_HIGH,
             border_radius=8,
         ))
         table_history.insert(0, (tbl["name"], roll, result))
@@ -1313,7 +1313,7 @@ def main(page: ft.Page):
                         ft.Text(tname, size=11, color=Theme.ACCENT, weight=ft.FontWeight.BOLD),
                         ft.Text(f"roll {roll}", size=11, color=Theme.TEXT_MUTED),
                     ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
-                    ft.Text(text, size=12, color=Theme.TEXT_PRIMARY, max_lines=2, overflow=ft.TextEllipsisMode.ELLIPSIS),
+                    ft.Text(text, size=12, color=Theme.TEXT_PRIMARY, max_lines=2),
                 ], tight=True, spacing=2),
                 padding=ft.Padding.symmetric(vertical=6, horizontal=10),
                 bgcolor=Theme.SURFACE,
@@ -1336,7 +1336,7 @@ def main(page: ft.Page):
         value=TABLES[0]["id"],
         options=[ft.dropdown.Option(t["id"], t["name"]) for t in TABLES],
         width=260,
-        on_change=table_select_change,
+        on_select=table_select_change,
         bgcolor=Theme.SURFACE,
         border_color=Theme.BORDER,
     )
