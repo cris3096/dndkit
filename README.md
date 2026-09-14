@@ -1,8 +1,6 @@
 # dndkit
 
-A desktop app with the D&D tools I actually use during sessions.
-
-I got tired of switching between 5 different websites and a notepad while DMing online with my friends, so I built this. It's a single .exe with everything in one place — dice roller, initiative tracker, encounter builder, spellbook, loot generator, NPC names, and a character manager.
+A desktop app with the D&D tools I actually use during sessions. It's a single .exe with everything in one place — dice roller, initiative tracker, encounter builder, spellbook, loot generator, NPC names, and a character manager.
 
 Works offline
 
@@ -22,5 +20,5 @@ Works offline
 Download `dndkit.exe` from the [Releases](https://github.com/cris3096/dndkit/releases) page and double-click it.
 
 ### Run from source
-pip install flet python main.py
-pip install flet pyinstaller pyinstaller dndkit.spec
+- pip install flet python main.py
+- pip install flet pyinstaller pyinstaller dndkit.spec
