@@ -4,7 +4,7 @@ A desktop app with the D&D tools I actually use during sessions.
 
 I got tired of switching between 5 different websites and a notepad while DMing online with my friends, so I built this. It's a single .exe with everything in one place — dice roller, initiative tracker, encounter builder, spellbook, loot generator, NPC names, and a character manager.
 
-Works offline. No account, no ads, no bullshit.
+Works offline
 
 ## What's in it
 
