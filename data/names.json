@@ -1,0 +1,42 @@
+{
+  "Human": {
+    "male": ["Aldric","Bram","Cedric","Duncan","Edric","Finnian","Gareth","Harold","Ivan","Jorah","Kael","Liam","Merrick","Nolan","Owen","Padraig","Quinn","Roland","Stefan","Tobias","Ulric","Varian","William","Xander","Yorick","Zane"],
+    "female": ["Alara","Brienna","Cassia","Dahlia","Elara","Fiora","Gwendolyn","Helena","Iona","Jasmine","Kara","Lyra","Mira","Nora","Ophelia","Petra","Quinta","Rhea","Sabine","Talia","Una","Vesna","Wren","Xara","Yvonne","Zara"],
+    "surname": ["Ashford","Blackwood","Carrington","Dunmore","Edgeworth","Fairfax","Grimm","Hawthorne","Ironheart","Jenkins","Kingsley","Lockhart","Montgomery","Nightingale","Oakenshield","Pendragon","Quincy","Ravencroft","Sterling","Thorne","Underhill","Vance","Whitmore","Xavier","Yarrow","Zeller"]
+  },
+  "Elf": {
+    "male": ["Aerindel","Barandur","Caelum","Darianel","Erevan","Faelar","Galadir","Haldir","Ithilro","Laeral","Mindril","Naelir","Oropher","Peredur","Quentin","Rianon","Sindrel","Thranduil","Ulthar","Varis"],
+    "female": ["Alasse","Berenia","Celebrian","Dilwen","Elenwen","Faenya","Galadriel","Halaliel","Ilyana","Luthien","Meril","Nimrodel","Oriana","Priwen","Quennar","Rhiannon","Sariel","Tinuviel","Urdel","Vaelia"],
+    "surname": ["Amakiir","Castraveti","Durothil","Fasharal","Hilael","Lianthil","Meliamne","Nailo","Siannodel","Xiloscient"]
+  },
+  "Dwarf": {
+    "male": ["Adrik","Balgruf","Dain","Eberk","Flint","Gimli","Harbromm","Kildrak","Morgran","Nalvar","Orsik","Rurik","Thorin","Tordek","Vondal"],
+    "female": ["Artin","Bardryn","Dagnal","Eldeth","Falunn","Gunnloda","Helja","Kristryd","Lifrasa","Mardred","Riswynn","Syllogist","Thordinna","Vistra"],
+    "surname": ["Balderk","Battlehammer","Dankil","Fireforge","Foamtankard","Ironfist","Loderr","Lutgehr","Rumnaheim","Strakeln","Torunn","Ungart"]
+  },
+  "Halfling": {
+    "male": ["Alton","Bobby","Cade","Dunner","Eldon","Finn","Garret","Lyle","Merric","Ned","Olo","Perrin","Quin","Roscoe","Samil","Theobald","Willy"],
+    "female": ["Andry","Bree","Callie","Cora","Daisy","Ella","Hannah","Jasmine","Kithri","Lidda","Marla","Nikki","Paela","Robyn","Sorcha","Tasseldra","Vani"],
+    "surname": ["Brushgather","Goodbarrel","Greenbottle","High-hill","Leagallow","Tealeaf","Thorngage","Tosscobble","Underbough"]
+  },
+  "Dragonborn": {
+    "male": ["Arjhan","Balasar","Bharash","Donaar","Ghesh","Heskan","Kriv","Medrash","Nadarr","Pandjed","Patrin","Rhogar","Shamash","Tarhun","Torinn"],
+    "female": ["Akra","Berylla","Farideh","Fjarra","Havilar","Jheri","Kava","Korinna","Mishann","Nala","Perra","Raiann","Sora","Surina","Thava"],
+    "surname": ["Clethtinthiallor","Delmirev","Essexashtor","Kepeshkmolik","Kerrhylon","Kimbatuul","Linxakasendalor","Myastan","Nemmonis","Ophinshtalajiir"]
+  },
+  "Gnome": {
+    "male": ["Alston","Alvyn","Boddynick","Cutenose","Dimble","Eberdim","Fonkin","Gimble","Glim","Jebeddo","Kellen","Namfoodle","Roondar","Seebo","Tukk","Warryn","Zook"],
+    "female": ["Bimpnottin","Buvvie","Caramip","Carlin","Dabbledew","Ellyjoybell","Elywick","Lilli","Loopmottin","Mardnab","Nyx","Orla","Roywyn","Shamil","Tana","Waywocket","Zanna"],
+    "surname": ["Beren","Daergel","Folkor","Garrick","Nackle","Murnig","Ningel","Raulnor","Scheppen","Timbers","Turen"]
+  },
+  "Half-Orc": {
+    "male": ["Brug","Caghran","Dench","Gell","Grimm","Hagarth","Kansif","Keth","Nylek","Oskar","Ront","Sharghash","Tarsk","Yurk"],
+    "female": ["Baggi","Emen","Engong","Kansif","Lago","Murreth","Myev","Neega","Ovak","Ownka","Shautha","Sutha","Vola","Volen"],
+    "surname": ["Gitech","Gratzig","Guloko","Hagrob","Lagre","Murgen","Nebyar","Oraz","Prosk","Ragki","Schez"]
+  },
+  "Tiefling": {
+    "male": ["Akmenos","Barakas","Damakos","Ekemon","Hephaestus","Kairon","Leucis","Melech","Mordai","Mortos","Pelaios","Skamos","Therai","Zethos"],
+    "female": ["Akta","Anakis","Bryseis","Callista","Carmenza","Damaya","Ea","Kallista","Lerissa","Makaria","Nemeia","Orianna","Phelaia","Rieta"],
+    "surname": ["Art","Carrion","Creeden","Devil-blood","Dread","Furcas","Glut","Gruen","Hellblood","Leal","Mordai","Nehm","Piqwe","Xarm"]
+  }
+}

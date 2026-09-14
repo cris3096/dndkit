@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+dist/
+*.exe
+*.msi
+*.zip
+.venv/
+venv/
+.DS_Store
+warn-*.txt
