@@ -18,7 +18,3 @@ Works offline
 
 ### Windows
 Download `dndkit.exe` from the [Releases](https://github.com/cris3096/dndkit/releases) page and double-click it.
-
-### Run from source
-- pip install flet python main.py
-- pip install flet pyinstaller pyinstaller dndkit.spec
