@@ -20,6 +20,9 @@ with open(DATA_DIR / "monsters.json", encoding="utf-8") as f:
     MONSTERS = json.load(f)
 with open(DATA_DIR / "names.json", encoding="utf-8") as f:
     NAMES_DATA = json.load(f)
+with open(DATA_DIR / "tables.json", encoding="utf-8") as f:
+    TABLES_DATA = json.load(f)
+    TABLES = TABLES_DATA["tables"]
 
 # ─── Extra spells ────────────────────────────────────────────
 EXTRA_SPELLS = [
@@ -542,6 +545,8 @@ def main(page: ft.Page):
     party_levels = [5, 5, 5, 5]
     encounter_monsters = []
     name_history = []
+    table_history = []
+    selected_table = TABLES[0]["id"]
 
     # ─── Navigation ───────────────────────────────────────
     nav_items = [
@@ -551,6 +556,7 @@ def main(page: ft.Page):
         ("initiative", ft.Icons.SWAP_VERT, "Initiative"),
         ("encounter", ft.Icons.SHIELD_OUTLINED, "Encounter"),
         ("loot", ft.Icons.STAR, "Loot"),
+        ("tables", ft.Icons.LIST_ALT, "d100 Tables"),
         ("names", ft.Icons.PERSON_ADD, "NPC Names"),
     ]
 
@@ -1278,6 +1284,82 @@ def main(page: ft.Page):
         border_color=Theme.BORDER,
     )
 
+    # ─── d100 Tables page ──────────────────────────────────────
+    table_result = ft.Column([], spacing=8, scroll=ft.ScrollMode.AUTO)
+    table_history_list = ft.Column([], spacing=4)
+
+    def roll_table_click(e):
+        nonlocal table_history
+        tbl = next((t for t in TABLES if t["id"] == selected_table), TABLES[0])
+        entries = tbl["entries"]
+        roll = random.randint(1, len(entries))
+        result = entries[roll - 1]
+        table_result.controls.insert(0, ft.Container(
+            ft.Column([
+                ft.Text(f"d{len(entries)} — Roll {roll}", size=11, color=Theme.ACCENT, weight=ft.FontWeight.BOLD),
+                ft.Text(result, color=Theme.TEXT_PRIMARY, size=14),
+            ], tight=True, spacing=2),
+            padding=ft.Padding.symmetric(vertical=10, horizontal=12),
+            bgcolor=Theme.SURFACE_VARIANT,
+            border_radius=8,
+        ))
+        table_history.insert(0, (tbl["name"], roll, result))
+        if len(table_history) > 20:
+            table_history = table_history[:20]
+        table_history_list.controls = [
+            ft.Container(
+                ft.Column([
+                    ft.Row([
+                        ft.Text(tname, size=11, color=Theme.ACCENT, weight=ft.FontWeight.BOLD),
+                        ft.Text(f"roll {roll}", size=11, color=Theme.TEXT_MUTED),
+                    ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+                    ft.Text(text, size=12, color=Theme.TEXT_PRIMARY, max_lines=2, overflow=ft.TextEllipsisMode.ELLIPSIS),
+                ], tight=True, spacing=2),
+                padding=ft.Padding.symmetric(vertical=6, horizontal=10),
+                bgcolor=Theme.SURFACE,
+                border_radius=6,
+            )
+            for tname, roll, text in table_history[:10]
+        ]
+        page.update()
+
+    def table_select_change(e):
+        nonlocal selected_table
+        selected_table = e.control.value
+        table_result.controls = []
+        tbl = next((t for t in TABLES if t["id"] == selected_table), TABLES[0])
+        table_desc.value = tbl.get("description", "")
+        page.update()
+
+    table_dropdown = ft.Dropdown(
+        label="Table",
+        value=TABLES[0]["id"],
+        options=[ft.dropdown.Option(t["id"], t["name"]) for t in TABLES],
+        width=260,
+        on_change=table_select_change,
+        bgcolor=Theme.SURFACE,
+        border_color=Theme.BORDER,
+    )
+
+    table_desc = ft.Text(TABLES[0].get("description", ""), size=12, color=Theme.TEXT_MUTED)
+
+    def build_tables_page():
+        return ft.Column([
+            page_header("d100 Random Tables", "Roll on random tables for inspiration.", ft.Icons.LIST_ALT),
+            card(
+                ft.Column([
+                    table_dropdown,
+                    table_desc,
+                    ft.Container(height=8),
+                    primary_button("Roll!", roll_table_click, ft.Icons.CASINO),
+                ], tight=True),
+            ),
+            ft.Container(height=12),
+            card(table_result, expand=True),
+            section_title("Recent Rolls", ft.Icons.HISTORY),
+            table_history_list,
+        ], scroll=ft.ScrollMode.AUTO, expand=True)
+
     def build_names_page():
         return ft.Column([
             page_header("NPC Name Generator", "Generate random NPC names with personality traits.", ft.Icons.PERSON_ADD),
@@ -1305,6 +1387,7 @@ def main(page: ft.Page):
         "initiative": build_initiative_page,
         "encounter": build_encounter_page,
         "loot": build_loot_page,
+        "tables": build_tables_page,
         "names": build_names_page,
     }
 
